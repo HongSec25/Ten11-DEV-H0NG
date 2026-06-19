@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="./image/ten11-logo.jpg"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HOME | TEN11-H0NG</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#111111',
+            red:   '#E8192C',
+            yellow:'#FFD600',
+            grey:  '#F5F5F5',
+            mid:   '#767676',
+            border:'#E0E0E0',
+            ash:   '#1A1A1A',
+            wire:  '#333333',
+            ghost: '#999999',
+            ice:   '#FFFFFF',
+            void:  '#0A0A0A',
+            chalk: '#F5F5F5',
+            fog:   '#CCCCCC',
+          },
+          fontFamily: {
+            display: ['"Bebas Neue"', 'sans-serif'],
+            body:    ['Inter', 'sans-serif'],
+            mono:    ['"Space Mono"', 'monospace'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: #fff; color: #111; }
+
+    @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+    .marquee-track{animation:marquee 20s linear infinite}
+
+    .nav-cat { position:relative; font-size:13px; font-weight:600; color:#111; padding:4px 0; }
+    .nav-cat::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:#E8192C; transition:width .25s; }
+    .nav-cat:hover::after { width:100%; }
+
+    #mob-toggle { display:none; }
+    #mob-toggle:checked ~ #mob-menu { display:flex; }
+
+    .sunburst {
+      background: radial-gradient(ellipse at center, #FFD600 0%, #FF8C00 40%, #FF5500 70%, #CC2200 100%);
+      position:relative; overflow:hidden;
+    }
+    .sunburst::before {
+      content:'';
+      position:absolute; inset:-50%;
+      background: repeating-conic-gradient(rgba(255,255,255,0.07) 0deg 10deg, transparent 10deg 20deg);
+      animation: spin 60s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .prod-card { background:#fff; border:1px solid #E0E0E0; transition:box-shadow .25s; }
+    .prod-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
+    .prod-card img { transition: transform .5s ease; }
+    .prod-card:hover img { transform: scale(1.04); }
+
+    .size-pill {
+      font-size:10px; font-weight:600; border:1px solid #DDD;
+      padding:3px 7px; color:#444; cursor:pointer; transition:all .15s;
+    }
+    .size-pill:hover { border-color:#111; color:#111; }
+    .size-pill.oos { color:#CCC; border-color:#EEE; cursor:not-allowed; text-decoration:line-through; }
+
+    .brand-tile { transition: transform .2s, box-shadow .2s; }
+    .brand-tile:hover { transform:translateY(-3px); box-shadow:0 6px 20px rgba(0,0,0,0.15); }
+
+    .ribbon {
+      position:absolute; top:0; right:0;
+      background:#E8192C; color:#fff;
+      font-size:9px; font-weight:700; letter-spacing:.05em;
+      padding:3px 8px 3px 12px;
+      clip-path: polygon(12px 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+
+    .tab-btn { padding:8px 20px; font-size:13px; font-weight:600; border:2px solid #DDD; color:#767676; cursor:pointer; transition:all .2s; }
+    .tab-btn.active, .tab-btn:hover { border-color:#111; color:#111; }
+
+    .atc-btn { transition: background .2s, color .2s; }
+    .atc-btn:hover { background:#111; color:#fff; }
+
+    ::selection { background:#FFD600; color:#111; }
+  </style>
+</head>
+<body>
+
+<div class="bg-ash border-b border-wire/60 overflow-hidden py-2.5">
+    <div class="flex whitespace-nowrap marquee-track">
+      <div class="flex">
+        <span class="font-mono text-[10px] tracking-widest text-white/70 px-10">FREE WORLDWIDE SHIPPING ON ORDERS OVER $150</span>
+        <span class="font-mono text-[10px] tracking-widest text-ice px-3">—</span>
+        <span class="font-mono text-[10px] tracking-widest text-white/70 px-10">TEN11 SS26 DROP NOW LIVE</span>
+        <span class="font-mono text-[10px] tracking-widest text-ice px-3">—</span>
+        <span class="font-mono text-[10px] tracking-widest text-white/70 px-10">FREE WORLDWIDE SHIPPING ON ORDERS OVER $150</span>
+        <span class="font-mono text-[10px] tracking-widest text-ice px-3">—</span>
+        <span class="font-mono text-[10px] tracking-widest text-white/70 px-10">TEN11 SS26 DROP NOW LIVE</span>
+        <span class="font-mono text-[10px] tracking-widest text-ice px-3">—</span>
+      </div>
+    </div>
+  </div>
+
+<nav class="bg-white border-b border-border sticky top-0 z-50 shadow-sm">
+  
+    <input type="checkbox" id="mob-toggle" class="hidden" />
+
+  <div class="max-w-screen-xl mx-auto px-4 md:px-8">
+
+        <div class="flex items-center justify-between h-14">
+
+            <div class="hidden md:flex items-center gap-7">
+        <a href="index.html" class="nav-cat">HOME</a>
+        <a href="ten11-products.html" class="nav-cat">PRODUCTS</a>
+        <a href="ten11-about.html" class="nav-cat">ABOUT</a>
+        <a href="ten11-contact.html" class="nav-cat">CONTACT</a>
+      </div>
+
+            <label for="mob-toggle" class="md:hidden flex flex-col gap-1.5 cursor-pointer p-1" aria-label="Toggle mobile menu">
+        <span class="w-6 h-0.5 bg-brand block"></span>
+        <span class="w-5 h-0.5 bg-brand block"></span>
+        <span class="w-6 h-0.5 bg-brand block"></span>
+      </label>
+      
+            <a href="index.html" class="absolute left-1/2 -translate-x-1/2">
+        <span class="font-display text-3xl md:text-4xl tracking-tight text-brand">TEN11<span class="text-red">.</span></span>
+      </a>
+
+            <div class="flex items-center gap-3 md:gap-4">
+                <div class="hidden md:flex items-center border border-border rounded-sm overflow-hidden">
+          <svg class="w-4 h-4 text-mid ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+          <input type="text" placeholder="Search" class="text-sm px-3 py-1.5 w-40 focus:outline-none focus:w-56 transition-all" />
+        </div>
+                <button class="p-1.5 hover:bg-grey rounded-full transition-colors">
+          <svg class="w-5 h-5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"/></svg>
+        </button>
+                <button class="p-1.5 hover:bg-grey rounded-full transition-colors">
+          <svg class="w-5 h-5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+        </button>
+                <button class="p-1.5 hover:bg-grey rounded-full transition-colors relative">
+          <svg class="w-5 h-5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/></svg>
+          <span class="absolute -top-1 -right-1 w-4 h-4 bg-red rounded-full text-white text-[9px] font-bold flex items-center justify-center">0</span>
+        </button>
+        <a href="#" class="hidden md:block text-sm font-semibold text-brand hover:text-red transition-colors">LOGIN</a>
+        <a href="#" class="hidden md:block text-sm font-semibold text-brand hover:text-red transition-colors">REGISTER</a>
+      </div>
+    </div>
+  </div>
+
+    <div id="mob-menu" class="hidden flex-col bg-white border-t border-border px-5 py-5 gap-4 md:hidden">
+      <a href="index.html" class="font-semibold text-sm text-red border-b border-border pb-3">T.HOME</a>
+      <a href="ten11-products.html" class="font-semibold text-sm text-brand border-b border-border pb-3">PRODUCTS</a>
+      <a href="ten11-about.html" class="font-semibold text-sm text-brand border-b border-border pb-3">ABOUT</a>
+      <a href="ten11-contact.html" class="font-semibold text-sm text-brand border-b border-border pb-3">CONTACT</a>
+      <a href="ten11-lifestyle.html" class="font-semibold text-sm text-brand pb-3">LIFESTYLE</a>
+      <div class="flex gap-3 pt-2">
+        <a href="ten11-login.html" class="flex-1 text-center py-2 border border-brand text-sm font-semibold text-brand">LOGIN</a>
+        <a href="ten11-register.html" class="flex-1 text-center py-2 bg-brand text-sm font-semibold text-white">REGISTER</a>
+      </div>
+    </div>
+</nav>
+
+<section class="sunburst min-h-[520px] md:min-h-[600px] flex flex-col items-center justify-center relative py-16 px-4">
+  <div class="relative z-10 text-center">
+        <div class="inline-block relative">
+      <div class="bg-brand border-4 border-yellow rounded-lg p-2 rotate-[-2deg] shadow-2xl">
+        <div class="bg-red rounded-md p-6 md:p-10">
+          <div class="font-display text-yellow text-5xl md:text-7xl leading-none mb-2 tracking-tight drop-shadow-lg">MID-YEAR</div>
+          <div class="font-display text-yellow text-6xl md:text-8xl leading-none tracking-tight drop-shadow-lg">SALE</div>
+          <div class="bg-yellow rounded mt-4 px-4 py-2 inline-block">
+            <div class="font-display text-brand text-8xl md:text-[120px] leading-none">70<span class="text-red">%</span></div>
+          </div>
+          <div class="font-body text-yellow text-sm font-bold tracking-widest mt-3 uppercase">UP TO</div>
+          <div class="mt-4">
+            <a href="ten11-products.html#New Arrivals" class="inline-block bg-brand text-yellow font-bold text-xs tracking-widest px-6 py-2.5 hover:bg-yellow hover:text-brand transition-colors">T&Cs APPLY</a>
+          </div>
+          <div class="font-display text-white/50 text-lg tracking-widest mt-4">TEN11.</div>
+        </div>
+      </div>
+    </div>
+        <div class="flex gap-4 justify-center mt-10">
+      <a href="ten11-products.html#Men" class="bg-white text-brand font-bold text-sm tracking-widest px-10 py-3.5 border-2 border-brand hover:bg-brand hover:text-white transition-colors">MEN</a>
+      <a href="ten11-products.html#Women" class="bg-white text-brand font-bold text-sm tracking-widest px-10 py-3.5 border-2 border-brand hover:bg-brand hover:text-white transition-colors">WOMEN</a>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white py-8 border-b border-border">
+  <div class="max-w-screen-xl mx-auto px-4 md:px-8">
+    <div class="flex items-center gap-3 mb-5">
+      <h2 class="text-sm font-bold text-brand uppercase tracking-widest">Shop by Brand</h2>
+      <span class="flex-1 h-px bg-border"></span>
+      <a href="#" class="text-xs text-red font-semibold hover:underline">See All →</a>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+              <img src="./image/Ten11_Web.png" alt="TEN ELEVEN Logo" class="brand-tile relative flex items-center justify-center h-16 md:h-20 overflow-hidden rounded w-full h-full object-cover" />
+              <img src="./image/Routine_Web.png" alt="ROUTINE Logo" class="brand-tile relative flex items-center justify-center h-16 md:h-20 overflow-hidden rounded w-full h-full object-cover" />
+              <img src="./image/Zando_Web.png" alt="ZANDO Logo" class="brand-tile relative flex items-center justify-center h-16 md:h-20 overflow-hidden rounded w-full h-full object-cover" />
+              <img src="./image/TagSpace_Web.png" alt="TAG SPACE Logo" class="brand-tile relative flex items-center justify-center h-16 md:h-20 overflow-hidden rounded w-full h-full object-cover" />
+              <img src="./image/361_Web.png" alt="361° Logo" class="brand-tile relative flex items-center justify-center h-16 md:h-20 overflow-hidden rounded w-full h-full object-cover" />
+    </div>
+  </div>
+</section>
+
+<section class="relative overflow-hidden" style="background: linear-gradient(180deg, #111 0%, #1a1a1a 100%); min-height:400px;">
+  <img src="./image/ten11 clock it_web_banner_Ten11.jpg" alt="TEN11 SS26 Campaign — Built for the Dark" class="absolute inset-0 w-full h-full object-cover object-center opacity-80" onerror="this.style.display='none'" />
+  <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 py-20 min-h-[400px]">
+    <p class="font-mono text-[10px] tracking-widest text-white/50 uppercase mb-3">SS26 / Campaign</p>
+    <h2 class="font-display text-6xl md:text-8xl text-white leading-none mb-6">CLOCK IT<span class="text-red">.</span></h2>
+    <p class="text-white/60 text-sm mb-8 max-w-sm">New season. Limited runs. No restocks.</p>
+    <a href="ten11-products.html#CLOCK IT" class="inline-block bg-white text-brand font-bold text-xs tracking-widest uppercase px-10 py-3.5 hover:bg-yellow transition-colors">SHOP THE DROP</a>
+  </div>
+</section>
+
+<section id="products" class="bg-grey py-10 md:py-14">
+  <div class="max-w-screen-xl mx-auto px-4 md:px-8">
+
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-7">
+      <h2 class="text-xl font-bold text-brand uppercase tracking-wide">On Trend Styles</h2>
+    </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+        <img src="./image/fashion/Graphic Off-Shoulder T-shirt.jpg" alt="Graphic Off-Shoulder T-shirt" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
+      </div>
+            <div class="py-3 px-4">
+        <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1">GRAPHIC OFF-SHOULDER T-SHIRT</h3>
+        <p class="text-sm font-mono text-brand font-bold mb-2">$14.59</p>
+      </div>
+    </div>
+
+            <div class="group bg-white border border-border overflow-hidden">
+    <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+    <img src="./image/fashion/Off-Shoulder Top.jpg" alt="Off-Shoulder Top" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
+  </div>
+
+    <div class="py-3 px-4">
+    <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1">OFF-SHOULDER TOP</h3>
+    <p class="text-sm font-mono text-brand font-bold mb-2">$13.59</p>
+  </div>
+</div>
+
+            <div class="group bg-white border border-border overflow-hidden">
+    <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+    <img src="./image/fashion/Polo Shirt With Zipper.jpg" alt="Polo Shirt With Zipper" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
+  </div>
+
+    <div class="py-3 px-4">
+    <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1">POLO SHIRT WITH ZIPPER</h3>
+    <p class="text-sm font-mono text-brand font-bold mb-2">$16.95</p>
+  </div>
+</div>
+
+          <div class="group bg-white border border-border overflow-hidden">
+    <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+    <img src="./image/fashion/Contrast Collar Layered Polo Shirt.jpg" alt="Contrast Collar Layered Polo Shirt" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
+  </div>
+
+    <div class="py-3 px-4">
+    <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1">CONTRAST COLLAR LAYERED POLO</h3>
+    <p class="text-sm font-mono text-brand font-bold mb-2">$17.59</p>
+  </div>
+</div>
+    </div>
+    <div class="text-center mt-8">
+      <a href="ten11-products.html" class="inline-block border-2 border-brand text-brand font-bold text-sm tracking-widest px-12 py-3 hover:bg-brand hover:text-white transition-colors">VIEW MORE</a>
+    </div>
+  </div>
+</section>
+
+<section class="bg-brand text-white py-12">
+  <div class="max-w-screen-xl mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-8">
+    <div>
+      <h3 class="font-display text-4xl tracking-wide text-yellow mb-2">TEN11 Location</h3>
+      <p class="text-sm text-white/70 max-w-xs">All in one place.</p>
+    </div>
+    <div class="flex gap-3">
+      <a href="ten11-contact.html#map" class="flex items-center gap-2 bg-white text-brand px-5 py-3 font-semibold text-sm hover:bg-yellow transition-colors">
+        OUR LOCATION
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-white border-t border-border pt-14 pb-8">
+  <div class="max-w-screen-xl mx-auto px-5 md:px-12">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-10 pb-12 border-b border-border">
+      <div class="col-span-2">
+        <span class="font-display text-4xl tracking-widest text-brand block mb-4">TEN11</span>
+        <p class="font-body font-light text-mid text-sm leading-relaxed max-w-xs mb-6">We accept all major credit cards.</p>
+        <img src="./image/We-accept-payment–for-web-footer-2.png" alt="Visa" class="w-auto max-h-[88px]" />
+      </div>
+      <div>
+        <p class="font-mono text-[9px] tracking-widest text-brand uppercase mb-5">Navigate</p>
+        <ul class="space-y-3">
+          <li><a href="index.html" class="font-body text-xs text-red">Home</a></li>
+          <li><a href="ten11-about.html" class="font-body text-xs text-mid hover:text-red transition-colors">About</a></li>
+          <li><a href="ten11-products.html" class="font-body text-xs text-mid hover:text-red transition-colors">Products</a></li>
+          <li><a href="ten11-contact.html" class="font-body text-xs text-mid hover:text-red transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-mono text-[9px] tracking-widest text-brand uppercase mb-5">Shop</p>
+        <ul class="space-y-3">
+          <li><a href="ten11-products.html#New Arrivals" class="font-body text-xs text-mid hover:text-red transition-colors">New Arrivals</a></li>
+          <li><a href="ten11-products.html#Women" class="font-body text-xs text-mid hover:text-red transition-colors">Women</a></li>
+          <li><a href="ten11-products.html#Men" class="font-body text-xs text-mid hover:text-red transition-colors">Men</a></li>
+          <li><a href="ten11-products.html#Routine" class="font-body text-xs text-mid hover:text-red transition-colors">Routine</a></li>
+          <li><a href="ten11-products.html" class="font-body text-xs text-mid hover:text-red transition-colors">Accessories</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-mono text-[9px] tracking-widest text-brand uppercase mb-5">About Developer</p>
+        <ul class="space-y-3">
+          <li class="font-body text-xs text-mid hover:text-red transition-colors">Develop By H0NG</li>
+          <li class="font-body text-xs text-mid hover:text-red transition-colors">This Website is for Educational Purposes Only</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-7 flex flex-col sm:flex-row justify-between gap-3">
+      <p class="font-mono text-[9px] text-mid uppercase tracking-widest">© 2026 TEN11, Developer: H0NG.</p>
+      <p class="font-mono text-[9px] text-mid uppercase tracking-widest">Phnom Penh · Tokyo · London</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./image/ten11-logo.jpg"/>
+    <title>PRODUCTS | TEN11</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#111111',
+                        red: '#E8192C',
+                        yellow: '#FFD600',
+                        grey: '#F5F5F5',
+                        mid: '#767676',
+                        border: '#E0E0E0',
+                        ash: '#1A1A1A',
+                        wire: '#333333',
+                        ghost: '#999999',
+                        ice: '#FFFFFF',
+                        void: '#0A0A0A',
+                        chalk: '#F5F5F5',
+                        fog: '#CCCCCC',
+                    },
+                    fontFamily: {
+                        display: ['"Bebas Neue"', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                        mono: ['"Space Mono"', 'monospace'],
+                        heading: ['"Bebas Neue"', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: #fff; color: #111; }
+
+        @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+        .marquee-track{animation:marquee 20s linear infinite}
+
+        .nav-cat { position:relative; font-size:13px; font-weight:600; color:#111; padding:4px 0; }
+        .nav-cat::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:#E8192C; transition:width .25s; }
+        .nav-cat:hover::after { width:100%; }
+
+        #mob-toggle { display:none; }
+        #mob-toggle:checked ~ #mob-menu { display:flex; }
+
+        .prod-card { background:#fff; border:1px solid #E0E0E0; transition:box-shadow .25s; }
+        .prod-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
+        .prod-card img { transition: transform .5s ease; }
+        .prod-card:hover img { transform: scale(1.04); }
+
+        .vertical-tag { writing-mode: vertical-rl; text-orientation: mixed; }
+
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+        ::selection { background:#FFD600; color:#111; }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+
+        <div class="bg-ash border-b border-wire/60 overflow-hidden py-2.5">
+        <div class="flex whitespace-nowrap marquee-track">
+            <div class="flex">
+                <span class="font-mono text-[10px] tracking-widest text-ghost/70 px-10">FREE WORLDWIDE SHIPPING ON ORDERS OVER $150</span>
+                <span class="font-mono text-[10px] tracking-widest text-ice px-3">—</span>
+                <span class="font-mono text-[10px] tracking-widest text-ghost/70 px-10">TEN11 SS26 DROP NOW LIVE</span>
+                <span class="font-mono text-[10px] tracking-widest text-ice px-3">—</span>
+                <span class="font-mono text-[10px] tracking-widest text-ghost/70 px-10">FREE WORLDWIDE SHIPPING ON ORDERS OVER $150</span>
+                <span class="font-mono text-[10px] tracking-widest text-ice px-3">—</span>
+                <span class="font-mono text-[10px] tracking-widest text-ghost/70 px-10">TEN11 SS26 DROP NOW LIVE</span>
+                <span class="font-mono text-[10px] tracking-widest text-ice px-3">—</span>
+            </div>
+        </div>
+    </div>
+
+        <nav class="bg-white border-b border-border sticky top-0 z-50 shadow-sm">
+                <input type="checkbox" id="mob-toggle" class="hidden" />
+        
+        <div class="max-w-screen-xl mx-auto px-4 md:px-8">
+                        <div class="flex items-center justify-between h-14">
+                                <div class="hidden md:flex items-center gap-7">
+                    <a href="index.html" class="nav-cat">HOME</a>
+                    <a href="ten11-products.html" class="nav-cat text-red">PRODUCTS</a>
+                    <a href="ten11-about.html" class="nav-cat">ABOUT</a>
+                    <a href="ten11-contact.html" class="nav-cat">CONTACT</a>
+                </div>
+
+                                <label for="mob-toggle" class="md:hidden flex flex-col gap-1.5 cursor-pointer p-1" aria-label="Toggle mobile menu">
+                    <span class="w-6 h-0.5 bg-brand block"></span>
+                    <span class="w-5 h-0.5 bg-brand block"></span>
+                    <span class="w-6 h-0.5 bg-brand block"></span>
+                </label>
+
+                                <a href="index.html" class="absolute left-1/2 -translate-x-1/2">
+                    <span class="font-display text-3xl md:text-4xl tracking-tight text-brand">TEN11<span class="text-red">.</span></span>
+                </a>
+
+                                <div class="flex items-center gap-3 md:gap-4">
+                                        <div class="hidden md:flex items-center border border-border rounded-sm overflow-hidden">
+                        <svg class="w-4 h-4 text-mid ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+                        <input type="text" placeholder="Search" class="text-sm px-3 py-1.5 w-40 focus:outline-none focus:w-56 transition-all" />
+                    </div>
+                                        <button class="p-1.5 hover:bg-grey rounded-full transition-colors" aria-label="Notifications">
+                        <svg class="w-5 h-5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"/></svg>
+                    </button>
+                                        <button class="p-1.5 hover:bg-grey rounded-full transition-colors" aria-label="Wishlist">
+                        <svg class="w-5 h-5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+                    </button>
+                                        <button class="p-1.5 hover:bg-grey rounded-full transition-colors relative" aria-label="Shopping cart">
+                        <svg class="w-5 h-5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/></svg>
+                        <span class="absolute -top-1 -right-1 w-4 h-4 bg-red rounded-full text-white text-[9px] font-bold flex items-center justify-center">0</span>
+                    </button>
+                    <a href="ten11-login.html" class="hidden md:block text-sm font-semibold text-brand hover:text-red transition-colors">LOGIN</a>
+                    <a href="ten11-register.html" class="hidden md:block text-sm font-semibold text-brand hover:text-red transition-colors">REGISTER</a>
+                </div>
+            </div>
+        </div>
+
+                <div id="mob-menu" class="hidden flex-col bg-white border-t border-border px-5 py-5 gap-4 md:hidden">
+            <a href="index.html" class="font-semibold text-sm text-brand border-b border-border pb-3">T.HOME</a>
+            <a href="ten11-products.html" class="font-semibold text-sm text-red border-b border-border pb-3">PRODUCTS</a>
+            <a href="ten11-about.html" class="font-semibold text-sm text-brand border-b border-border pb-3">ABOUT</a>
+            <a href="ten11-contact.html" class="font-semibold text-sm text-brand border-b border-border pb-3">CONTACT</a>
+            <div class="flex gap-3 pt-2">
+                <a href="ten11-login.html" class="flex-1 text-center py-2 border border-brand text-sm font-semibold text-brand">LOGIN</a>
+                <a href="ten11-register.html" class="flex-1 text-center py-2 bg-brand text-sm font-semibold text-white">REGISTER</a>
+            </div>
+        </div>
+    </nav>
+
+        <section id="CLOCK IT" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="flex items-center gap-3 mb-5">
+      <h2 class="text-sm font-bold text-red uppercase tracking-widest">CLOCK IT</h2>
+      <span class="flex-1 h-px bg-red"></span>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/CLOK IT/Graphic Printed T-Shirt.jpg" alt="Graphic Printed T-Shirt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute top-2 right-4 bg-red text-white text-[10px] font-bold tracking-widest px-3 py-1.5 rounded-full">HOT</div>
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">Graphic Printed T-Shirt</h3>
+                <div class="flex items-center justify-center gap-2">
+                <p class="text-sm font-mono text-red font-bold">$22.95</p>
+                </div>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/CLOK IT/Pattern T-Shirt With Embroidery.jpg" alt="Pattern T-Shirt With Embroidery" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute top-2 right-4 bg-red text-white text-[10px] font-bold tracking-widest px-3 py-1.5 rounded-full">HOT</div>
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">Pattern T-Shirt With Embroidery</h3>
+                <div class="flex items-center justify-center gap-2">
+                <p class="text-sm font-mono text-red font-bold">$23.95</p>
+                </div>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/CLOK IT/Graphic Printed T-Shirt-W.jpg" alt="Graphic Printed T-Shirt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute top-2 right-4 bg-red text-white text-[10px] font-bold tracking-widest px-3 py-1.5 rounded-full">HOT</div>
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">XS</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">Graphic Printed T-Shirt</h3>
+                <div class="flex items-center justify-center gap-2">
+                <p class="text-sm font-mono text-red font-bold">$13.95</p>
+                </div>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/CLOK IT/Graphic Printed Cropped T-Shirt.jpg" alt="Graphic Printed Cropped T-Shirt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute top-2 right-4 bg-red text-white text-[10px] font-bold tracking-widest px-3 py-1.5 rounded-full">HOT</div>
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">XS</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">Graphic Printed Cropped T-Shirt</h3>
+                <div class="flex items-center justify-center gap-2">
+                <p class="text-sm font-mono text-red font-bold">$11.95</p>
+                </div>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/CLOK IT/Washed Jorts With Elastic Waistband.jpg" alt="Washed Jorts With Elastic Waistband" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute top-2 right-4 bg-red text-white text-[10px] font-bold tracking-widest px-3 py-1.5 rounded-full">HOT</div>
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">XS</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold line-through text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">Washed Jorts With Elastic Waistband</h3>
+                <div class="flex items-center justify-center gap-2">
+                <p class="text-sm font-mono text-red font-bold">$21.95</p>
+                </div>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/CLOK IT/Sweat Shorts.jpg" alt="Sweat Shorts" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute top-2 right-4 bg-red text-white text-[10px] font-bold tracking-widest px-3 py-1.5 rounded-full">HOT</div>
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">Sweat Shorts</h3>
+                <div class="flex items-center justify-center gap-2">
+                <p class="text-sm font-mono text-red font-bold">$20.59</p>
+                </div>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/CLOK IT/Tiered Mini Skirt.jpg" alt="Tiered Mini Skirt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute top-2 right-4 bg-red text-white text-[10px] font-bold tracking-widest px-3 py-1.5 rounded-full">HOT</div>
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold line-through text-mid hover:border-brand hover:text-brand transition-colors">XS</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">Tiered Mini Skirt</h3>
+                <div class="flex items-center justify-center gap-2">
+                <p class="text-sm font-mono text-red font-bold">$14.95</p>
+                </div>
+            </div>
+        </div>
+        
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/CLOK IT/Mini Skirt.jpg" alt="Mini Skirt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute top-2 right-4 bg-red text-white text-[10px] font-bold tracking-widest px-3 py-1.5 rounded-full">HOT</div>
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">XL</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">Mini Skirt</h3>
+                <div class="flex items-center justify-center gap-2">
+                <p class="text-sm font-mono text-red font-bold">$15.59</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="New Arrivals" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="flex items-center gap-3 mb-5">
+      <h2 class="text-sm font-bold text-red uppercase tracking-widest">Mid Year Sale</h2>
+      <span class="flex-1 h-px bg-red"></span>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/mid-year/Regular T-Shirt.jpg" alt="Regular T-shirt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute top-2 right-4 bg-red text-white text-[10px] font-bold tracking-widest px-3 py-1.5 rounded-full">- 70%</div>
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">Regular T-Shirt</h3>
+                <div class="flex items-center justify-center gap-2">
+                <p class="text-sm font-mono text-red font-bold">$4.98</p>
+                <p class="text-sm font-mono text-mid line-through">$16.59</p>
+                </div>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/mid-year/Regular Fitted Tops.jpg" alt="Regular Fitted Tops" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute top-2 right-4 bg-red text-white text-[10px] font-bold tracking-widest px-3 py-1.5 rounded-full">- 70%</div>
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">Regular Fitted Tops</h3>
+                <div class="flex items-center justify-center gap-2">
+                <p class="text-sm font-mono text-red font-bold">$2.39</p>
+                <p class="text-sm font-mono text-mid line-through">$7.95</p>
+                </div>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/mid-year/Tweed Cropped Jacket.jpg" alt="Tweed Cropped Jacket" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute top-2 right-4 bg-red text-white text-[10px] font-bold tracking-widest px-3 py-1.5 rounded-full">- 70%</div>
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">XS</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">Tweed Cropped Jacket</h3>
+                <div class="flex items-center justify-center gap-2">
+                <p class="text-sm font-mono text-red font-bold">$7.19</p>
+                <p class="text-sm font-mono text-mid line-through">$23.95</p>
+                </div>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/mid-year/Sport Life T-Shirt.jpg" alt="Sport Life T-Shirt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute top-2 right-4 bg-red text-white text-[10px] font-bold tracking-widest px-3 py-1.5 rounded-full">- 70%</div>
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">XS</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">Sport Life T-Shirt</h3>
+                <div class="flex items-center justify-center gap-2">
+                <p class="text-sm font-mono text-red font-bold">$5.99</p>
+                <p class="text-sm font-mono text-mid line-through">$19.95</p>
+                </div>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/mid-year/Cropped Top.jpg" alt="Cropped Top" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute top-2 right-4 bg-red text-white text-[10px] font-bold tracking-widest px-3 py-1.5 rounded-full">- 70%</div>
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">XS</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold line-through text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">Cropped Top</h3>
+                <div class="flex items-center justify-center gap-2">
+                <p class="text-sm font-mono text-red font-bold">$3.29</p>
+                <p class="text-sm font-mono text-mid line-through">$10.95</p>
+                </div>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/mid-year/Mini Karo Skirt.jpg" alt="Mini Karo Skirt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute top-2 right-4 bg-red text-white text-[10px] font-bold tracking-widest px-3 py-1.5 rounded-full">- 70%</div>
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">Mini Karo Skirt</h3>
+                <div class="flex items-center justify-center gap-2">
+                <p class="text-sm font-mono text-red font-bold">$4.98</p>
+                <p class="text-sm font-mono text-mid line-through">$16.95</p>
+                </div>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/mid-year/Regular Knee Shorts.jpg" alt="Regular Knee Shorts" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute top-2 right-4 bg-red text-white text-[10px] font-bold tracking-widest px-3 py-1.5 rounded-full">- 70%</div>
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold line-through text-mid hover:border-brand hover:text-brand transition-colors">XS</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">Regular Knee Shorts</h3>
+                <div class="flex items-center justify-center gap-2">
+                <p class="text-sm font-mono text-red font-bold">$5.58</p>
+                <p class="text-sm font-mono text-mid line-through">$18.59</p>
+                </div>
+            </div>
+        </div>
+        
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/mid-year/Regular Printed T-Shirt.jpg" alt="Regular Printed T-Shirt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute top-2 right-4 bg-red text-white text-[10px] font-bold tracking-widest px-3 py-1.5 rounded-full">- 60%</div>
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">XL</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">XXL</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">Regular Printed T-Shirt</h3>
+                <div class="flex items-center justify-center gap-2">
+                <p class="text-sm font-mono text-red font-bold">$5.84</p>
+                <p class="text-sm font-mono text-mid line-through">$14.59</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="Women" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="flex items-center gap-3 mb-5">
+      <h2 class="text-sm font-bold text-brand uppercase tracking-widest">Women</h2>
+      <span class="flex-1 h-px bg-border"></span>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/fashion/Graphic Off-Shoulder T-shirt.jpg" alt="Graphic Off-Shoulder T-shirt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <div class="flex items-center justify-center gap-2">
+                        <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                        <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                        <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                    </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">GRAPHIC OFF-SHOULDER T-SHIRT</h3>
+                <p class="text-sm font-mono text-brand font-bold">$14.59</p>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/fashion/Off-Shoulder Top.jpg" alt="Off-Shoulder Top" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">OFF-SHOULDER TOP</h3>
+                <p class="text-sm font-mono text-brand font-bold">$13.59</p>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/fashion/Cropped Tank Top.jpg" alt="Cropped Tank Top" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">CROPPEDTANK TOP</h3>
+                <p class="text-sm font-mono text-brand font-bold">$12.59</p>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/fashion/Asymmetric Lace Top.jpg" alt="Asymmetric Lace Top" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">ASYMMETRIC LACE TOP</h3>
+                <p class="text-sm font-mono text-brand font-bold">$15.59</p>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/fashion/Straight Leg Denim Jeans.jpg" alt="Straight Leg Denim Jeans" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">STRAIGHT LEG DENIM JEANS</h3>
+                <p class="text-sm font-mono text-brand font-bold">$20.59</p>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/fashion/Wide Leg Jeans.jpg" alt="Wide Leg Jeans" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">WIDE LEG JEANS</h3>
+                <p class="text-sm font-mono text-brand font-bold">$26.59</p>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/fashion/Mini Skirt.jpg" alt="Mini Skirt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">MINI SKIRT</h3>
+                <p class="text-sm font-mono text-brand font-bold">$14.59</p>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/fashion/Floral Maxi Skirt.jpg" alt="Floral Maxi Skirt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">FLORAL MAXI SKIRT</h3>
+                <p class="text-sm font-mono text-brand font-bold">$16.07</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="Men" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="flex items-center gap-3 mb-5">
+      <h2 class="text-sm font-bold text-brand uppercase tracking-widest">Men</h2>
+      <span class="flex-1 h-px bg-border"></span>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/fashion/Polo Shirt With Zipper.jpg" alt="Polo Shirt With Zipper" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <div class="flex items-center justify-center gap-2">
+                        <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                        <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                        <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                    </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">POLO SHIRT WITH ZIPPER</h3>
+                <p class="text-sm font-mono text-brand font-bold">$16.95</p>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/fashion/Layered Stripe Sleeve Graphic Polo.jpg" alt="Layered Stripe Sleeve Graphic Polo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">LAYERED STRIPE SLEEVE GRAPHIC POLO</h3>
+                <p class="text-sm font-mono text-brand font-bold">$20.95</p>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/fashion/Long Sleeve Button-Up Shirt.jpg" alt="Long Sleeve Button-Up Shirt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">LONG SLEEVE BUTTON-UP SHIRT</h3>
+                <p class="text-sm font-mono text-brand font-bold">$21.59</p>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/fashion/Short Sleeve Button-up Shirt.jpg" alt="Short Sleeve Button-up Shirt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">Short Sleeve Button-up Shirt</h3>
+                <p class="text-sm font-mono text-brand font-bold">$15.95</p>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/fashion/Techwear Wide Leg Pants.jpg" alt="Techwear Wide Leg Pants" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">TECHWEAR WIDE LEG PANTS</h3>
+                <p class="text-sm font-mono text-brand font-bold">$28.95</p>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/fashion/Wide-Leg Sweatpants.jpg" alt="Wide Leg Sweatpants" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">WIDE LEG SWEATPANTS</h3>
+                <p class="text-sm font-mono text-brand font-bold">$21.59</p>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/fashion/Relaxed Sweatpants.jpg" alt="Relaxed Sweatpants" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">RELAXED SWEATPANTS</h3>
+                <p class="text-sm font-mono text-brand font-bold">$16.95</p>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/fashion/Wide Leg Denim Jeans.jpg" alt="Wide Leg Denim Jeans" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">WIDE LEG DENIM JEANS</h3>
+                <p class="text-sm font-mono text-brand font-bold">$20.59</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="Routine" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="flex items-center gap-3 mb-5">
+      <h2 class="text-sm font-bold text-brand uppercase tracking-widest">ROUTINE</h2>
+      <span class="flex-1 h-px bg-border"></span>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/fashion/Routine/Stripe Polo Shirt.jpg" alt="Polo Shirt With Zipper" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <div class="flex items-center justify-center gap-2">
+                        <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                        <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                        <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                    </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">STRIPED POLO SHIRT</h3>
+                <p class="text-sm font-mono text-brand font-bold">$26.95</p>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/fashion/Routine/Straight Jeans.jpg" alt="Straight Jeans" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">STRAIGHT JEANS</h3>
+                <p class="text-sm font-mono text-brand font-bold">$21.95</p>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/fashion/Routine/Loose Fit T-Shirt.jpg" alt="Loose Fit T-Shirt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">LOOSE FIT T-SHIRT</h3>
+                <p class="text-sm font-mono text-brand font-bold">$17.95</p>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/fashion/Routine/Slim Fit Trousers.jpg" alt="Slim Fit Trousers" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">SLIM FIT TROUSERS</h3>
+                <p class="text-sm font-mono text-brand font-bold">$22.95</p>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/fashion/Routine/Striped Long Sleeve Shirt.jpg" alt="Striped Long Sleeve Shirt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">STRIPED LONG SLEEVE SHIRT</h3>
+                <p class="text-sm font-mono text-brand font-bold">$21.59</p>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/fashion/Routine/Wide Leg Trousers.jpg" alt="Wide Leg Trousers" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">WIDE LEG TROUSERS</h3>
+                <p class="text-sm font-mono text-brand font-bold">$27.95</p>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/fashion/Routine/Regular Fitted T-Shirt.jpg" alt="Regular Fitted T-Shirt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">REGULAR FITTED T-SHIRT</h3>
+                <p class="text-sm font-mono text-brand font-bold">$15.59</p>
+            </div>
+        </div>
+
+                <div class="group bg-white border border-border overflow-hidden">
+            <div class="relative bg-[#f0f0f0] aspect-[4/5] overflow-hidden flex items-center justify-center">
+                <img src="./image/fashion/Routine/Regular Denim Shorts.jpg" alt="Regular Denim Shorts" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                
+                                <div class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex items-center justify-center gap-2">
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">S</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">M</button>
+                    <button class="w-8 h-8 rounded-full border border-border text-[10px] font-semibold text-mid hover:border-brand hover:text-brand transition-colors">L</button>
+                </div>
+                </div>
+            </div>
+
+                        <div class="py-4 px-4 text-center">
+                <h3 class="font-mono text-xs font-semibold text-brand uppercase tracking-wide mb-1.5">REGULAR DENIM SHORTS</h3>
+                <p class="text-sm font-mono text-brand font-bold">$20.95</p>
+            </div>
+        </div>
+    </div>
+    
+            <div class="text-center mt-16">
+            <button class="px-12 py-3 border-2 border-black text-sm font-semibold tracking-widest hover:bg-black hover:text-white transition-all">LOAD MORE</button>
+        </div>
+</section>
+
+        <section class="bg-red py-16 px-4 text-center my-8">
+        <h2 class="font-heading text-5xl md:text-7xl text-white tracking-tight mb-4">UP TO 70% OFF</h2>
+        <p class="text-white/90 tracking-widest uppercase text-sm mb-8">Mid-Year Sale · Selected Styles</p>
+        <a href="#" class="inline-block px-10 py-3 bg-white text-red font-semibold tracking-widest text-sm hover:bg-black hover:text-white transition-all">SHOP SALE</a>
+    </section>
+
+    <footer class="bg-white border-t border-border pt-14 pb-8">
+  <div class="max-w-screen-xl mx-auto px-5 md:px-12">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-10 pb-12 border-b border-border">
+      <div class="col-span-2">
+        <span class="font-display text-4xl tracking-widest text-brand block mb-4">TEN11</span>
+        <p class="font-body font-light text-mid text-sm leading-relaxed max-w-xs mb-6">We accept all major credit cards.</p>
+        <img src="./image/We-accept-payment–for-web-footer-2.png" alt="Visa" class="w-auto max-h-[88px]" />
+      </div>
+      <div>
+        <p class="font-mono text-[9px] tracking-widest text-brand uppercase mb-5">Navigate</p>
+        <ul class="space-y-3">
+          <li><a href="index.html" class="font-body text-xs text-mid hover:text-red transition-colors">Home</a></li>
+          <li><a href="ten11-about.html" class="font-body text-xs text-mid hover:text-red transition-colors">About</a></li>
+          <li><a href="ten11-products.html" class="font-body text-xs text-red">Products</a></li>
+          <li><a href="ten11-contact.html" class="font-body text-xs text-mid hover:text-red transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-mono text-[9px] tracking-widest text-brand uppercase mb-5">Shop</p>
+        <ul class="space-y-3">
+          <li><a href="ten11-products.html#New Arrivals" class="font-body text-xs text-mid hover:text-red transition-colors">New Arrivals</a></li>
+          <li><a href="ten11-products.html#Women" class="font-body text-xs text-mid hover:text-red transition-colors">Women</a></li>
+          <li><a href="ten11-products.html#Men" class="font-body text-xs text-mid hover:text-red transition-colors">Men</a></li>
+          <li><a href="ten11-products.html#Routine" class="font-body text-xs text-mid hover:text-red transition-colors">Routine</a></li>
+          <li><a href="ten11-products.html" class="font-body text-xs text-mid hover:text-red transition-colors">Accessories</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-mono text-[9px] tracking-widest text-brand uppercase mb-5">About Developer</p>
+        <ul class="space-y-3">
+          <li class="font-body text-xs text-mid hover:text-red transition-colors">Develop By H0NG</li>
+          <li class="font-body text-xs text-mid hover:text-red transition-colors">This Website is for Educational Purposes Only</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-7 flex flex-col sm:flex-row justify-between gap-3">
+      <p class="font-mono text-[9px] text-mid uppercase tracking-widest">© 2026 TEN11, Developer: H0NG.</p>
+      <p class="font-mono text-[9px] text-mid uppercase tracking-widest">Phnom Penh · Tokyo · London</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

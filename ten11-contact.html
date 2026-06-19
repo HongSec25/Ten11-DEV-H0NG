@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="./image/ten11-logo.jpg"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CONTACT | TEN11</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#111111', red: '#E8192C', yellow: '#FFD600', grey: '#F5F5F5',
+            mid: '#767676', border: '#E0E0E0', ash: '#1A1A1A', wire: '#333333',
+            ghost: '#999999', ice: '#FFFFFF', void: '#0A0A0A', chalk: '#F5F5F5', fog: '#CCCCCC',
+          },
+          fontFamily: {
+            display: ['"Bebas Neue"', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+            mono: ['"Space Mono"', 'monospace'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: #fff; color: #111; }
+    @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+    .marquee-track{animation:marquee 20s linear infinite}
+    .nav-cat { position:relative; font-size:13px; font-weight:600; color:#111; padding:4px 0; }
+    .nav-cat::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:#E8192C; transition:width .25s; }
+    .nav-cat:hover::after { width:100%; }
+    #mob-toggle { display:none; }
+    #mob-toggle:checked ~ #mob-menu { display:flex; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary { list-style: none; }
+    details[open] summary .faq-icon { transform: rotate(45deg); }
+    ::selection { background:#FFD600; color:#111; }
+  </style>
+</head>
+<body>
+
+<div class="bg-ash border-b border-wire/60 overflow-hidden py-2.5">
+  <div class="flex whitespace-nowrap marquee-track">
+    <div class="flex">
+      <span class="font-mono text-[10px] tracking-widest text-ghost/70 px-10">FREE WORLDWIDE SHIPPING ON ORDERS OVER $150</span>
+      <span class="font-mono text-[10px] tracking-widest text-ice px-3">—</span>
+      <span class="font-mono text-[10px] tracking-widest text-ghost/70 px-10">TEN11 SS26 DROP NOW LIVE</span>
+      <span class="font-mono text-[10px] tracking-widest text-ice px-3">—</span>
+    </div>
+  </div>
+</div>
+
+<nav class="bg-white border-b border-border sticky top-0 z-50 shadow-sm">
+  <input type="checkbox" id="mob-toggle" class="hidden" />
+  <div class="max-w-screen-xl mx-auto px-4 md:px-8">
+    <div class="flex items-center justify-between h-14">
+      <div class="hidden md:flex items-center gap-7">
+        <a href="index.html" class="nav-cat">HOME</a>
+        <a href="ten11-products.html" class="nav-cat">PRODUCTS</a>
+        <a href="ten11-about.html" class="nav-cat">ABOUT</a>
+        <a href="ten11-contact.html" class="nav-cat text-red">CONTACT</a>
+      </div>
+      <label for="mob-toggle" class="md:hidden flex flex-col gap-1.5 cursor-pointer p-1" aria-label="Menu">
+        <span class="w-6 h-0.5 bg-brand block"></span>
+        <span class="w-5 h-0.5 bg-brand block"></span>
+        <span class="w-6 h-0.5 bg-brand block"></span>
+      </label>
+      <a href="index.html" class="absolute left-1/2 -translate-x-1/2">
+        <span class="font-display text-3xl md:text-4xl tracking-tight text-brand">TEN11<span class="text-red">.</span></span>
+      </a>
+      <div class="flex items-center gap-3 md:gap-4">
+        <button class="p-1.5 hover:bg-grey rounded-full transition-colors">
+          <svg class="w-5 h-5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+        </button>
+        <button class="p-1.5 hover:bg-grey rounded-full transition-colors relative">
+          <svg class="w-5 h-5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/></svg>
+          <span class="absolute -top-1 -right-1 w-4 h-4 bg-red rounded-full text-white text-[9px] font-bold flex items-center justify-center">0</span>
+        </button>
+        <a href="#" class="hidden md:block text-sm font-semibold text-brand hover:text-red transition-colors">LOGIN</a>
+        <a href="#" class="hidden md:block text-sm font-semibold text-brand hover:text-red transition-colors">REGISTER</a>
+      </div>
+    </div>
+  </div>
+  <div id="mob-menu" class="hidden flex-col bg-white border-t border-border px-5 py-5 gap-4 md:hidden">
+    <a href="index.html" class="font-semibold text-sm text-brand border-b border-border pb-3">T.HOME</a>
+    <a href="ten11-products.html" class="font-semibold text-sm text-brand border-b border-border pb-3">PRODUCTS</a>
+    <a href="ten11-about.html" class="font-semibold text-sm text-brand border-b border-border pb-3">ABOUT</a>
+    <a href="ten11-contact.html" class="font-semibold text-sm text-red border-b border-border pb-3">CONTACT</a>
+    <div class="flex gap-3 pt-2">
+      <a href="#" class="flex-1 text-center py-2 border border-brand text-sm font-semibold text-brand">LOGIN</a>
+      <a href="#" class="flex-1 text-center py-2 bg-brand text-sm font-semibold text-white">REGISTER</a>
+    </div>
+  </div>
+</nav>
+
+<section class="bg-grey py-20 px-4 text-center border-b border-border">
+  <h1 class="font-display text-6xl md:text-8xl tracking-tight mb-4">CONTACT US</h1>
+  <p class="text-mid text-lg">We would love to hear from you</p>
+</section>
+
+<section class="max-w-screen-xl mx-auto px-4 md:px-8 py-16">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="bg-white border border-border p-8 text-center hover:border-red hover:shadow-lg transition-all duration-500">
+      <div class="text-4xl mb-4">✉</div>
+      <h3 class="font-display text-2xl mb-2">EMAIL</h3>
+      <p class="text-mid text-sm">support@ten11.com</p>
+    </div>
+    <div class="bg-white border border-border p-8 text-center hover:border-red hover:shadow-lg transition-all duration-500">
+      <div class="text-4xl mb-4"><img src="./image/hotline.svg" alt="Phone" class="w-10 h-10 mx-auto"></div>
+      <h3 class="font-display text-2xl mb-2">PHONE</h3>
+      <p class="text-mid text-sm">+855 12 345 678</p>
+    </div>
+    <div class="bg-white border border-border p-8 text-center hover:border-red hover:shadow-lg transition-all duration-500">
+      <div class="text-4xl mb-4">◷</div>
+      <h3 class="font-display text-2xl mb-2">HOURS</h3>
+      <p class="text-mid text-sm">Mon - Sat: 9AM - 8PM</p>
+    </div>
+  </div>
+</section>
+
+<section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+  <h2 class="font-display text-4xl md:text-5xl text-center mb-12">SEND A MESSAGE</h2>
+  <form class="space-y-6">
+    <div class="grid md:grid-cols-2 gap-6">
+      <input type="text" placeholder="Your Name" class="w-full border border-border px-4 py-3 text-sm focus:outline-none focus:border-brand transition-colors" />
+      <input type="email" placeholder="Your Email" class="w-full border border-border px-4 py-3 text-sm focus:outline-none focus:border-brand transition-colors" />
+    </div>
+    <input type="text" placeholder="Purpose" class="w-full border border-border px-4 py-3 text-sm focus:outline-none focus:border-brand transition-colors" />
+    <textarea rows="6" placeholder="Your Message" class="w-full border border-border px-4 py-3 text-sm focus:outline-none focus:border-brand transition-colors resize-none"></textarea>
+    <button type="submit" class="w-full py-4 bg-brand text-white font-semibold tracking-widest text-sm hover:bg-red transition-colors">SEND MESSAGE</button>
+  </form>
+</section>
+
+<section id="map" class="bg-white border-t border-border">
+  <div class="max-w-screen-xl mx-auto px-4 md:px-8 py-10">
+    <h2 class="font-display text-2xl text-brand mb-5">FIND OUR STORE</h2>
+    <div class="w-full overflow-hidden border border-border" style="height:400px;">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.5!2d104.8963154!3d11.5665084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310951f073eba151%3A0x22af9b55fcedc8dc!2sTEN11%20Kampuchea%20Krom!5e0!3m2!1sen!2skh!4v1750000000000!5m2!1sen!2skh"
+        width="100%"
+        height="400"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="TEN11 Kampuchea Krom — Phnom Penh, Cambodia">
+      </iframe>
+    </div>
+    <p class="text-xs text-mid mt-3">TEN11 Kampuchea Krom, Phnom Penh, Cambodia &nbsp;·&nbsp; <a href="https://www.google.com/maps/place/TEN11+Kampuchea+Krom/@11.5665078,104.8778828,3057m/data=!3m2!1e3!4b1!4m6!3m5!1s0x310951f073eba151:0x22af9b55fcedc8dc!8m2!3d11.5665084!4d104.8963154!16s%2Fg%2F11h_6fb3l9" target="_blank" rel="noopener" class="text-red hover:underline">Open in Google Maps →</a></p>
+  </div>
+</section>
+
+<footer class="bg-white border-t border-border pt-14 pb-8">
+  <div class="max-w-screen-xl mx-auto px-5 md:px-12">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-10 pb-12 border-b border-border">
+      <div class="col-span-2">
+        <span class="font-display text-4xl tracking-widest text-brand block mb-4">TEN11</span>
+        <p class="font-body font-light text-mid text-sm leading-relaxed max-w-xs mb-6">We accept all major credit cards.</p>
+        <img src="./image/We-accept-payment–for-web-footer-2.png" alt="Visa" class="w-auto max-h-[88px]" />
+      </div>
+      <div>
+        <p class="font-mono text-[9px] tracking-widest text-brand uppercase mb-5">Navigate</p>
+        <ul class="space-y-3">
+          <li><a href="index.html" class="font-body text-xs text-mid hover:text-red transition-colors">Home</a></li>
+          <li><a href="ten11-about.html" class="font-body text-xs text-mid hover:text-red transition-colors">About</a></li>
+          <li><a href="ten11-products.html" class="font-body text-xs text-mid hover:text-red transition-colors">Products</a></li>
+          <li><a href="ten11-contact.html" class="font-body text-xs text-red">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-mono text-[9px] tracking-widest text-brand uppercase mb-5">Shop</p>
+        <ul class="space-y-3">
+          <li><a href="ten11-products.html#New Arrivals" class="font-body text-xs text-mid hover:text-red transition-colors">New Arrivals</a></li>
+          <li><a href="ten11-products.html#Women" class="font-body text-xs text-mid hover:text-red transition-colors">Women</a></li>
+          <li><a href="ten11-products.html#Men" class="font-body text-xs text-mid hover:text-red transition-colors">Men</a></li>
+          <li><a href="ten11-products.html#Routine" class="font-body text-xs text-mid hover:text-red transition-colors">Routine</a></li>
+          <li><a href="ten11-products.html" class="font-body text-xs text-mid hover:text-red transition-colors">Accessories</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-mono text-[9px] tracking-widest text-brand uppercase mb-5">About Developer</p>
+        <ul class="space-y-3">
+          <li class="font-body text-xs text-mid hover:text-red transition-colors">Develop By H0NG</li>
+          <li class="font-body text-xs text-mid hover:text-red transition-colors">This Website is for Educational Purposes Only</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-7 flex flex-col sm:flex-row justify-between gap-3">
+      <p class="font-mono text-[9px] text-mid uppercase tracking-widest">© 2026 TEN11, Developer: H0NG.</p>
+      <p class="font-mono text-[9px] text-mid uppercase tracking-widest">Phnom Penh · Tokyo · London</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
